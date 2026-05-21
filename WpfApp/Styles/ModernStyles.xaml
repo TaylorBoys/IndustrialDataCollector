@@ -182,7 +182,6 @@
         <Setter Property="Background" Value="White"/>
         <Setter Property="BorderBrush" Value="{StaticResource BorderColor}"/>
         <Setter Property="BorderThickness" Value="2"/>
-        <Setter Property="CornerRadius" Value="12"/>
         <Setter Property="RowBackground" Value="White"/>
         <Setter Property="AlternatingRowBackground" Value="#FAFBFC"/>
         <Setter Property="RowHeight" Value="48"/>
@@ -195,40 +194,9 @@
                     <Border Background="{TemplateBinding Background}"
                             BorderBrush="{TemplateBinding BorderBrush}"
                             BorderThickness="{TemplateBinding BorderThickness}"
-                            CornerRadius="{TemplateBinding CornerRadius}"
+                            CornerRadius="12"
                             Effect="{StaticResource CardShadow}">
                         <ScrollViewer x:Name="DG_ScrollViewer" Focusable="false">
-                            <ScrollViewer.Template>
-                                <ControlTemplate TargetType="ScrollViewer">
-                                    <Grid>
-                                        <Grid.ColumnDefinitions>
-                                            <ColumnDefinition Width="*"/>
-                                            <ColumnDefinition Width="Auto"/>
-                                        </Grid.ColumnDefinitions>
-                                        <Grid.RowDefinitions>
-                                            <RowDefinition Height="Auto"/>
-                                            <RowDefinition Height="*"/>
-                                            <RowDefinition Height="Auto"/>
-                                        </Grid.RowDefinitions>
-                                        <DataGridColumnHeadersPresenter x:Name="PART_ColumnHeadersPresenter"
-                                                                        Grid.Row="0" Grid.Column="0"/>
-                                        <ScrollContentPresenter x:Name="PART_ScrollContentPresenter"
-                                                                Grid.Row="1" Grid.Column="0"/>
-                                        <ScrollBar x:Name="PART_VerticalScrollBar"
-                                                   Grid.Row="1" Grid.Column="1"
-                                                   Maximum="{TemplateBinding ScrollableHeight}"
-                                                   Value="{Binding VerticalOffset, RelativeSource={RelativeSource TemplatedParent}}"
-                                                   ViewportSize="{TemplateBinding ViewportHeight}"
-                                                   Visibility="{TemplateBinding ComputedVerticalScrollBarVisibility}"/>
-                                        <ScrollBar x:Name="PART_HorizontalScrollBar"
-                                                   Grid.Row="2" Grid.Column="0"
-                                                   Maximum="{TemplateBinding ScrollableWidth}"
-                                                   Value="{Binding HorizontalOffset, RelativeSource={RelativeSource TemplatedParent}}"
-                                                   ViewportSize="{TemplateBinding ViewportWidth}"
-                                                   Visibility="{TemplateBinding ComputedHorizontalScrollBarVisibility}"/>
-                                    </Grid>
-                                </ControlTemplate>
-                            </ScrollViewer.Template>
                             <ItemsPresenter/>
                         </ScrollViewer>
                     </Border>
