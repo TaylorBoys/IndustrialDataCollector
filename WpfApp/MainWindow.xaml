@@ -24,13 +24,10 @@
         <TextBlock Grid.Row="1" Text="设备列表" FontWeight="SemiBold" FontSize="18" Foreground="{StaticResource TextPrimary}" Margin="0,0,0,12"/>
         
         <DataGrid Grid.Row="2" ItemsSource="{Binding Devices}" SelectedItem="{Binding SelectedDevice}"
-                  Style="{StaticResource ModernDataGrid}"
-                  ColumnHeaderStyle="{StaticResource ModernDataGridColumnHeader}"
-                  RowStyle="{StaticResource ModernDataGridRow}"
-                  CellStyle="{StaticResource ModernDataGridCell}">
+                  Style="{StaticResource ModernDataGrid}">
             <DataGrid.Columns>
                 <DataGridTextColumn Header="设备名称" Binding="{Binding Name}" Width="180"/>
-                <DataGridTextColumn Header="协议类型" Binding="{Binding Protocol}" Width="130"/>
+                <DataGridTextColumn Header="协议类型" Binding="{Binding Protocol, Converter={StaticResource ProtocolTypeToChineseConverter}}" Width="130"/>
                 <DataGridTextColumn Header="IP地址" Binding="{Binding IpAddress}" Width="150"/>
                 <DataGridTemplateColumn Header="连接状态" Width="140">
                     <DataGridTemplateColumn.CellTemplate>

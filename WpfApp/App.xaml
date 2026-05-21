@@ -11,6 +11,8 @@
             
             <converters:BooleanToStatusConverter x:Key="BooleanToStatusConverter"/>
             <converters:BooleanToColorConverter x:Key="BooleanToColorConverter"/>
+            <converters:ProtocolTypeToChineseConverter x:Key="ProtocolTypeToChineseConverter"/>
+            <converters:DataTypeToChineseConverter x:Key="DataTypeToChineseConverter"/>
         </ResourceDictionary>
     </Application.Resources>
 </Application>

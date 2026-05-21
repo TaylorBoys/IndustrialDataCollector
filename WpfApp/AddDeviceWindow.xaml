@@ -1,13 +1,15 @@
 <Window x:Class="WpfApp.AddDeviceWindow"
         xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
         xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
-        Title="添加设备" Height="480" Width="500"
+        Title="添加设备" Height="550" Width="500"
         WindowStartupLocation="CenterOwner"
         ResizeMode="NoResize"
         Style="{StaticResource ModernWindow}">
     <Border Style="{StaticResource CardBorder}" Margin="20">
         <Grid>
             <Grid.RowDefinitions>
+                <RowDefinition Height="Auto"/>
+                <RowDefinition Height="Auto"/>
                 <RowDefinition Height="Auto"/>
                 <RowDefinition Height="Auto"/>
                 <RowDefinition Height="Auto"/>
@@ -25,8 +27,9 @@
 
             <TextBlock Grid.Row="2" Text="协议类型:" FontSize="14" Foreground="{StaticResource TextPrimary}" Margin="0,20,0,8"/>
             <ComboBox Grid.Row="3" x:Name="ProtocolComboBox" SelectedIndex="0" Style="{StaticResource ModernComboBox}">
-                <ComboBoxItem Content="Modbus TCP" Style="{StaticResource ModernComboBoxItem}"/>
-                <ComboBoxItem Content="OPC UA" Style="{StaticResource ModernComboBoxItem}"/>
+                <ComboBoxItem Content="Modbus TCP"/>
+                <ComboBoxItem Content="Modbus RTU"/>
+                <ComboBoxItem Content="OPC UA"/>
             </ComboBox>
 
             <TextBlock Grid.Row="4" Text="IP地址 / OPC UA 端点:" FontSize="14" Foreground="{StaticResource TextPrimary}" Margin="0,20,0,8"/>
@@ -35,7 +38,10 @@
             <TextBlock Grid.Row="6" Text="端口:" FontSize="14" Foreground="{StaticResource TextPrimary}" Margin="0,20,0,8"/>
             <TextBox Grid.Row="7" x:Name="PortTextBox" Text="502" Style="{StaticResource ModernTextBox}"/>
 
-            <StackPanel Grid.Row="9" Orientation="Horizontal" HorizontalAlignment="Right" Margin="0,30,0,0">
+            <TextBlock Grid.Row="8" Text="设备地址 (Slave ID):" FontSize="14" Foreground="{StaticResource TextPrimary}" Margin="0,20,0,8"/>
+            <TextBox Grid.Row="9" x:Name="SlaveIdTextBox" Text="1" Style="{StaticResource ModernTextBox}"/>
+
+            <StackPanel Grid.Row="11" Orientation="Horizontal" HorizontalAlignment="Right" Margin="0,30,0,0">
                 <Button Content="取消" Click="CancelButton_Click" Style="{StaticResource SecondaryButton}" Margin="0,0,12,0"/>
                 <Button Content="确定" Click="AddButton_Click" Style="{StaticResource PrimaryButton}"/>
             </StackPanel>

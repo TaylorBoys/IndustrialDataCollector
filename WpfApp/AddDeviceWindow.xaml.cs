@@ -16,9 +16,18 @@ public partial class AddDeviceWindow : Window
     {
         InitializeComponent();
         DeviceNameTextBox.Text = existing.Name;
-        ProtocolComboBox.SelectedIndex = existing.Protocol == ProtocolType.OpcUa ? 1 : 0;
+        
+        ProtocolComboBox.SelectedIndex = existing.Protocol switch
+        {
+            ProtocolType.ModbusTcp => 0,
+            ProtocolType.ModbusRtu => 1,
+            ProtocolType.OpcUa => 2,
+            _ => 0
+        };
+        
         IpAddressTextBox.Text = existing.IpAddress;
         PortTextBox.Text = existing.Port.ToString();
+        SlaveIdTextBox.Text = existing.SlaveId.ToString();
     }
 
     private void AddButton_Click(object sender, RoutedEventArgs e)
@@ -35,7 +44,19 @@ public partial class AddDeviceWindow : Window
             return;
         }
 
-        var protocol = ProtocolComboBox.SelectedIndex == 0 ? ProtocolType.ModbusTcp : ProtocolType.OpcUa;
+        if (!int.TryParse(SlaveIdTextBox.Text, out int slaveId))
+        {
+            MessageBox.Show("请输入有效的设备地址", "错误", MessageBoxButton.OK, MessageBoxImage.Error);
+            return;
+        }
+
+        var protocol = ProtocolComboBox.SelectedIndex switch
+        {
+            0 => ProtocolType.ModbusTcp,
+            1 => ProtocolType.ModbusRtu,
+            2 => ProtocolType.OpcUa,
+            _ => ProtocolType.ModbusTcp
+        };
 
         NewDevice = new DeviceConfig
         {
@@ -45,7 +66,7 @@ public partial class AddDeviceWindow : Window
             Port = port,
             OpcUaEndpoint = protocol == ProtocolType.OpcUa ? IpAddressTextBox.Text : null,
             ScanIntervalMs = 1000,
-            SlaveId = 1
+            SlaveId = slaveId
         };
 
         DialogResult = true;

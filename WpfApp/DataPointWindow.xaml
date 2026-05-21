@@ -21,14 +21,11 @@
         </StackPanel>
         
         <DataGrid Grid.Row="2" x:Name="DataPointListView"
-                  Style="{StaticResource ModernDataGrid}"
-                  ColumnHeaderStyle="{StaticResource ModernDataGridColumnHeader}"
-                  RowStyle="{StaticResource ModernDataGridRow}"
-                  CellStyle="{StaticResource ModernDataGridCell}">
+                  Style="{StaticResource ModernDataGrid}">
             <DataGrid.Columns>
                 <DataGridTextColumn Header="名称" Binding="{Binding Name}" Width="160"/>
                 <DataGridTextColumn Header="地址" Binding="{Binding Address}" Width="130"/>
-                <DataGridTextColumn Header="数据类型" Binding="{Binding DataType}" Width="140"/>
+                <DataGridTextColumn Header="数据类型" Binding="{Binding DataType, Converter={StaticResource DataTypeToChineseConverter}}" Width="140"/>
                 <DataGridTextColumn Header="单位" Binding="{Binding Unit}" Width="100"/>
                 <DataGridTextColumn Header="缩放因子" Binding="{Binding ScaleFactor}" Width="120"/>
                 <DataGridTextColumn Header="偏移量" Binding="{Binding Offset}" Width="100"/>
