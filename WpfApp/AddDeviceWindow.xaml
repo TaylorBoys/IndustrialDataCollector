@@ -22,23 +22,23 @@
                 <RowDefinition Height="Auto"/>
             </Grid.RowDefinitions>
 
-            <TextBlock Grid.Row="0" Text="设备名称:" FontSize="14" Foreground="{StaticResource TextPrimary}" Margin="0,0,0,8"/>
+            <TextBlock Grid.Row="0" Text="设备名称:" FontSize="14" Foreground="{StaticResource TextPrimaryBrush}" Margin="0,0,0,8"/>
             <TextBox Grid.Row="1" x:Name="DeviceNameTextBox" Text="新设备" Style="{StaticResource ModernTextBox}"/>
 
-            <TextBlock Grid.Row="2" Text="协议类型:" FontSize="14" Foreground="{StaticResource TextPrimary}" Margin="0,20,0,8"/>
+            <TextBlock Grid.Row="2" Text="协议类型:" FontSize="14" Foreground="{StaticResource TextPrimaryBrush}" Margin="0,20,0,8"/>
             <ComboBox Grid.Row="3" x:Name="ProtocolComboBox" SelectedIndex="0" Style="{StaticResource ModernComboBox}">
                 <ComboBoxItem Content="Modbus TCP"/>
                 <ComboBoxItem Content="Modbus RTU"/>
                 <ComboBoxItem Content="OPC UA"/>
             </ComboBox>
 
-            <TextBlock Grid.Row="4" Text="IP地址 / OPC UA 端点:" FontSize="14" Foreground="{StaticResource TextPrimary}" Margin="0,20,0,8"/>
+            <TextBlock Grid.Row="4" Text="IP地址 / OPC UA 端点:" FontSize="14" Foreground="{StaticResource TextPrimaryBrush}" Margin="0,20,0,8"/>
             <TextBox Grid.Row="5" x:Name="IpAddressTextBox" Text="127.0.0.1" Style="{StaticResource ModernTextBox}"/>
 
-            <TextBlock Grid.Row="6" Text="端口:" FontSize="14" Foreground="{StaticResource TextPrimary}" Margin="0,20,0,8"/>
+            <TextBlock Grid.Row="6" Text="端口:" FontSize="14" Foreground="{StaticResource TextPrimaryBrush}" Margin="0,20,0,8"/>
             <TextBox Grid.Row="7" x:Name="PortTextBox" Text="502" Style="{StaticResource ModernTextBox}"/>
 
-            <TextBlock Grid.Row="8" Text="设备地址 (Slave ID):" FontSize="14" Foreground="{StaticResource TextPrimary}" Margin="0,20,0,8"/>
+            <TextBlock Grid.Row="8" Text="设备地址 (Slave ID):" FontSize="14" Foreground="{StaticResource TextPrimaryBrush}" Margin="0,20,0,8"/>
             <TextBox Grid.Row="9" x:Name="SlaveIdTextBox" Text="1" Style="{StaticResource ModernTextBox}"/>
 
             <StackPanel Grid.Row="11" Orientation="Horizontal" HorizontalAlignment="Right" Margin="0,30,0,0">

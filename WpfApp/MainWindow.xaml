@@ -12,7 +12,7 @@
         </Grid.RowDefinitions>
         
         <StackPanel Grid.Row="0" Orientation="Horizontal" Margin="0,0,0,20">
-            <TextBlock Text="工业数据采集系统" FontSize="30" FontWeight="Bold" Foreground="{StaticResource PrimaryColor}" Margin="0,0,30,0" VerticalAlignment="Center"/>
+            <TextBlock Text="工业数据采集系统" FontSize="30" FontWeight="Bold" Foreground="{StaticResource PrimaryBrush}" Margin="0,0,30,0" VerticalAlignment="Center"/>
             <Button Content="添加设备" Command="{Binding AddDeviceCommand}" Style="{StaticResource PrimaryButton}" Margin="0,0,12,0"/>
             <Button Content="编辑设备" Command="{Binding EditDeviceCommand}" Style="{StaticResource SecondaryButton}" Margin="0,0,12,0"/>
             <Button Content="删除设备" Command="{Binding DeleteDeviceCommand}" Style="{StaticResource DangerButton}" Margin="0,0,12,0"/>
@@ -21,7 +21,7 @@
             <Button Content="停止所有" Command="{Binding StopAllCommand}" Style="{StaticResource WarningButton}"/>
         </StackPanel>
         
-        <TextBlock Grid.Row="1" Text="设备列表" FontWeight="SemiBold" FontSize="18" Foreground="{StaticResource TextPrimary}" Margin="0,0,0,12"/>
+        <TextBlock Grid.Row="1" Text="设备列表" FontWeight="SemiBold" FontSize="18" Foreground="{StaticResource TextPrimaryBrush}" Margin="0,0,0,12"/>
         
         <DataGrid Grid.Row="2" ItemsSource="{Binding Devices}" SelectedItem="{Binding SelectedDevice}"
                   Style="{StaticResource ModernDataGrid}">

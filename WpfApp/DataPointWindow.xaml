@@ -12,7 +12,7 @@
             <RowDefinition Height="Auto"/>
         </Grid.RowDefinitions>
         
-        <TextBlock Grid.Row="0" Text="数据点列表" FontWeight="Bold" FontSize="20" Foreground="{StaticResource TextPrimary}" Margin="0,0,0,16"/>
+        <TextBlock Grid.Row="0" Text="数据点列表" FontWeight="Bold" FontSize="20" Foreground="{StaticResource TextPrimaryBrush}" Margin="0,0,0,16"/>
         
         <StackPanel Grid.Row="1" Orientation="Horizontal" Margin="0,0,0,16">
             <Button Content="添加数据点" Click="AddButton_Click" Style="{StaticResource PrimaryButton}" Margin="0,0,12,0"/>
