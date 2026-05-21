@@ -129,6 +129,10 @@
         <Setter Property="Background" Value="{StaticResource DangerBrush}"/>
     </Style>
 
+    <Style x:Key="InfoButton" TargetType="Button" BasedOn="{StaticResource PrimaryButton}">
+        <Setter Property="Background" Value="{StaticResource InfoBrush}"/>
+    </Style>
+
     <!-- 文本框样式 -->
     <Style x:Key="ModernTextBox" TargetType="TextBox">
         <Setter Property="Background" Value="{StaticResource SurfaceBrush}"/>
