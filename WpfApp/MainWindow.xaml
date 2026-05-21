@@ -34,7 +34,7 @@
                         <DataTemplate>
                             <StackPanel Orientation="Horizontal" VerticalAlignment="Center">
                                 <Ellipse Width="12" Height="12" Fill="{Binding IsConnected, Converter={StaticResource BooleanToColorConverter}}" Margin="0,0,8,0"/>
-                                <TextBlock Text="{Binding IsConnected, Converter={StaticResource BooleanToStatusConverter}}" Foreground="{StaticResource TextSecondary}"/>
+                                <TextBlock Text="{Binding IsConnected, Converter={StaticResource BooleanToStatusConverter}}" Foreground="{StaticResource TextSecondaryBrush}"/>
                             </StackPanel>
                         </DataTemplate>
                     </DataGridTemplateColumn.CellTemplate>
@@ -44,7 +44,7 @@
                         <DataTemplate>
                             <StackPanel Orientation="Horizontal" VerticalAlignment="Center">
                                 <Ellipse Width="12" Height="12" Fill="{Binding IsScanning, Converter={StaticResource BooleanToColorConverter}}" Margin="0,0,8,0"/>
-                                <TextBlock Text="{Binding IsScanning, Converter={StaticResource BooleanToStatusConverter}}" Foreground="{StaticResource TextSecondary}"/>
+                                <TextBlock Text="{Binding IsScanning, Converter={StaticResource BooleanToStatusConverter}}" Foreground="{StaticResource TextSecondaryBrush}"/>
                             </StackPanel>
                         </DataTemplate>
                     </DataGridTemplateColumn.CellTemplate>
