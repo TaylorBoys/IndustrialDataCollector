@@ -43,7 +43,7 @@
                       ShadowDepth="0"/>
 
     <!-- 全局样式 -->
-    <Style TargetType="Window">
+    <Style x:Key="ModernWindow" TargetType="Window">
         <Setter Property="Background" Value="{StaticResource BackgroundBrush}"/>
         <Setter Property="FontFamily" Value="Microsoft YaHei UI, Segoe UI, PingFang SC, sans-serif"/>
         <Setter Property="FontSize" Value="14"/>
@@ -198,10 +198,14 @@
         <Setter Property="BorderThickness" Value="1"/>
         <Setter Property="Padding" Value="12,10"/>
         <Setter Property="FontSize" Value="14"/>
+        <Setter Property="Foreground" Value="{StaticResource TextPrimaryBrush}"/>
+        <Setter Property="MinHeight" Value="38"/>
     </Style>
 
     <Style TargetType="ComboBoxItem">
         <Setter Property="Padding" Value="12,10"/>
+        <Setter Property="Foreground" Value="{StaticResource TextPrimaryBrush}"/>
+        <Setter Property="Background" Value="Transparent"/>
     </Style>
 
     <!-- DataGrid 样式 -->
